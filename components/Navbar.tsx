@@ -18,7 +18,7 @@ export default function Navbar() {
                         <Image src={logo} alt="logo" />
                     </Link>
                     <ul></ul>
-                    <button className="hamburger" onClick={ToggleSidebar}>
+                    {/* <button className="hamburger" onClick={ToggleSidebar}>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
@@ -27,10 +27,10 @@ export default function Navbar() {
                         >
                             <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" />
                         </svg>
-                    </button>
+                    </button> */}
                 </nav>
             </header>
-            <aside className={`sidebar bg-white ${isOpen === true ? "active" : ""}`}>
+            {/* <aside className={`sidebar bg-white ${isOpen === true ? "active" : ""}`}>
                 <div className="sd-header flex items-center justify-between p-3 h-16">
                     <Link href="/" className="logo">
                         <Image src={logo} alt="logo" />
@@ -58,7 +58,7 @@ export default function Navbar() {
                         ))}
                     </ul>
                 </div>
-            </aside>
+            </aside> */}
         </>
     );
 }
