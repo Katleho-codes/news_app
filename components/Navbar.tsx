@@ -5,7 +5,11 @@ import Link from "next/link";
 import { useState } from "react";
 import logo from "../public/logo.svg";
 
-export default function Navbar() {
+type Props = {
+    children?: React.ReactNode;
+}
+
+export default function Navbar(props: Props) {
     const [isOpen, setIsopen] = useState(false);
     const ToggleSidebar = () => {
         isOpen === true ? setIsopen(false) : setIsopen(true);
@@ -18,16 +22,9 @@ export default function Navbar() {
                         <Image src={logo} alt="logo" />
                     </Link>
                     <ul></ul>
-                    {/* <button className="hamburger" onClick={ToggleSidebar}>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                        >
-                            <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" />
-                        </svg>
-                    </button> */}
+                    <button className="hamburger" onClick={() => { window.history.go(-1) }}>
+                        {props.children}
+                    </button>
                 </nav>
             </header>
             {/* <aside className={`sidebar bg-white ${isOpen === true ? "active" : ""}`}>

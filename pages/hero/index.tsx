@@ -1,8 +1,7 @@
-import Link from "next/link";
 import { news } from "@/public/_data/news";
 import Image from "next/image";
 import { useState } from "react";
-
+import { useRouter } from "next/router";
 
 export default function Hero() {
     const [userEmail, setUserEmail] = useState("");
@@ -11,7 +10,7 @@ export default function Hero() {
         e.preventDefault();
         alert("Subscribed!");
     }
-
+    const router = useRouter()
 
     return (
         <>
@@ -46,7 +45,7 @@ export default function Hero() {
                     </h2>
                     <div className="grid grid-cols-1  gap-4 my-5">
                         {news.slice(10, 11).map((article) => (
-                            <article className="card grid grid-cols-1 lg:grid-cols-2 border shadow-sm rounded cursor-pointer" key={article.id}>
+                            <article className="card grid grid-cols-1 lg:grid-cols-2 border shadow-sm rounded cursor-pointer" key={article.id} onClick={() => { router.push("article/?id=" + article.id) }}>
                                 <div className="img_wrapper overflow-hidden">
                                     <Image className="w-100 h-auto rounded-tl rounded-bl w-full object-cover" placeholder="blur" src={article.image_url} alt={article.title} />
                                 </div>
@@ -68,7 +67,7 @@ export default function Hero() {
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-4 my-5">
                         {news.slice(0, 10).map((article) => (
-                            <article className="card grid grid-cols-2 border shadow-sm rounded cursor-pointer" key={article.id}>
+                            <article className="card grid grid-cols-2 border shadow-sm rounded cursor-pointer" key={article.id} onClick={() => { router.push("article/?id=" + article.id) }}>
                                 <div className="img_wrapper overflow-hidden">
                                     <Image className="w-100 h-auto rounded-tl rounded-bl w-full object-cover" placeholder="blur" src={article.image_url} alt={article.title} />
                                 </div>
