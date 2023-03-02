@@ -10,7 +10,10 @@ import climate from "../images/climate.jpg";
 import weeknd from "../images/theweeknd.jpg";
 import manu from "../images/manchester-united-v-newcastle-un.jpg";
 
-export const news = [
+
+
+
+export const news: any = [
   {
     id: 1,
     title: "Putin signs bill to suspend last nuclear arms pact with US",

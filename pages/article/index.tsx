@@ -8,7 +8,7 @@ import Link from "next/link";
 function Article() {
     const router = useRouter();
     const { id } = router.query;
-    const articleDetail = news?.find((x) => x.id === Number(id));
+    const articleDetail = news?.find((x: any) => x.id === Number(id));
     return (
         <>
             <Navbar>
@@ -22,7 +22,7 @@ function Article() {
                                 placeholder="blur"
                                 className="w-100 h-auto rounded-tl rounded-bl w-full object-cover"
                                 src={articleDetail?.image_url}
-                                alt={articleDetail?.title}
+                                alt={""}
                             />
                         </div>
                         <div className="text_wrapper flex flex-col p-5">

@@ -44,7 +44,7 @@ export default function Hero() {
 
                     </h2>
                     <div className="grid grid-cols-1  gap-4 my-5">
-                        {news.slice(10, 11).map((article) => (
+                        {news.slice(10, 11).map((article: any) => (
                             <article className="card grid grid-cols-1 lg:grid-cols-2 border shadow-sm rounded cursor-pointer" key={article.id} onClick={() => { router.push("article/?id=" + article.id) }}>
                                 <div className="img_wrapper overflow-hidden">
                                     <Image className="w-100 h-auto rounded-tl rounded-bl w-full object-cover" placeholder="blur" src={article.image_url} alt={article.title} />
@@ -66,7 +66,7 @@ export default function Hero() {
                         Top stories{" "}
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-4 my-5">
-                        {news.slice(0, 10).map((article) => (
+                        {news.slice(0, 10).map((article: any) => (
                             <article className="card grid grid-cols-2 border shadow-sm rounded cursor-pointer" key={article.id} onClick={() => { router.push("article/?id=" + article.id) }}>
                                 <div className="img_wrapper overflow-hidden">
                                     <Image className="w-100 h-auto rounded-tl rounded-bl w-full object-cover" placeholder="blur" src={article.image_url} alt={article.title} />
